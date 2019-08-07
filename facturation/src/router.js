@@ -1,6 +1,10 @@
 import Vue from "vue";
 import Router from "vue-router";
-import Home from "./views/Home.vue";
+import Presentation from "./views/Presentation.vue";
+import ListeFournisseurs from "./views/ListeFournisseurs.vue";
+import ListeFactures from "./views/ListeFactures.vue";
+import UpdateFournisseur from "./views/UpdateFournisseur.vue";
+import UpdateFacture from "./views/UpdateFacture.vue";
 
 Vue.use(Router);
 
@@ -10,17 +14,33 @@ export default new Router({
   routes: [
     {
       path: "/",
-      name: "home",
-      component: Home
+      name: "presentation",
+      component: () =>
+        import("./views/Presentation.vue")
     },
     {
-      path: "/about",
-      name: "about",
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
+      path: "/ListeFournisseurs",
+      name: "listefournisseurs",
       component: () =>
-        import(/* webpackChunkName: "about" */ "./views/About.vue")
-    }
+        import("./views/ListeFournisseurs.vue")
+    },
+    {
+      path: "/ListeFactures",
+      name: "listefactures",
+      component: () =>
+        import("./views/ListeFactures.vue")
+    },
+    {
+      path: "/UpdateFournisseur",
+      name: "updatefournisseur",
+      component: () =>
+        import("./views/UpdateFournisseur.vue")
+    },
+    {
+      path: "/UpdateFacture",
+      name: "updateFacture",
+      component: () =>
+        import("./views/UpdateFacture.vue")
+    },
   ]
 });
