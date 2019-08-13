@@ -21,16 +21,31 @@
 
             <v-menu offset-y>
                 <template v-slot:activator="{ on }">
-                    <v-btn color="primary" dark v-on="on">Fournisseurs</v-btn>
+                    <v-btn dark v-on="on">Fournisseurs</v-btn>
                 </template>
                 <v-list>
-                    <v-list-item v-for="(item, index) in items" :key="index" @click="">
-                        <v-list-item-title>{{}}</v-list-item-title>
+                    <v-list-item href= "ListeFournisseurs.vue">
+                        Liste des Fournisseurs
+                    </v-list-item>
+                    <v-list-item href= "UpdateFournisseur.vue">
+                        Création et Modification des Fournisseurs
                     </v-list-item>
                 </v-list>
             </v-menu>
 
-            <v-btn text class="hidden-sm-and-down" href="">Factures</v-btn>
+            <v-menu offset-y>
+                <template v-slot:activator="{ on }">
+                    <v-btn dark v-on="on">Factures</v-btn>
+                </template>
+                <v-list>
+                    <v-list-item href="ListeFactures.vue">
+                        Liste des Factures
+                    </v-list-item>
+                    <v-list-item href="UpdateFactures.vue">
+                        Création et Modification des Factures
+                    </v-list-item>
+                </v-list>
+            </v-menu>
         </v-toolbar>
     </span>
 </template>
@@ -43,7 +58,7 @@ export default {
             appTitle: 'Trecobat',
             drawer: false,
             items: [
-                { title: 'Accueil' },
+                { title: 'Présentation' },
                 { title: 'Fournisseurs' },
                 { title: 'Factures' }
             ]

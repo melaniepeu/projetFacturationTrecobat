@@ -45,7 +45,7 @@
     }
   },    
   "prettier": {
-    "singleQuote": true
+    "simpleQuote": true
   },
   "postcss": {
     "plugins": {
